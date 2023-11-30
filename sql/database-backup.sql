@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 30, 2023 at 02:27 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.1.25
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 31-12-2021 a las 20:13:49
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,23 +18,23 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cryptodev`
+-- Base de datos: `fitpro_db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bodyparts`
+-- Estructura de tabla para la tabla `bodyparts`
 --
 
 CREATE TABLE `bodyparts` (
   `bodypart_id` int(11) NOT NULL,
-  `bodypart_title` varchar(150) NOT NULL,
-  `bodypart_image` varchar(150) NOT NULL
+  `bodypart_title` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `bodypart_image` varchar(150) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `bodyparts`
+-- Volcado de datos para la tabla `bodyparts`
 --
 
 INSERT INTO `bodyparts` (`bodypart_id`, `bodypart_title`, `bodypart_image`) VALUES
@@ -50,17 +50,17 @@ INSERT INTO `bodyparts` (`bodypart_id`, `bodypart_title`, `bodypart_image`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Estructura de tabla para la tabla `categories`
 --
 
 CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL,
-  `category_title` text NOT NULL,
-  `category_image` varchar(150) NOT NULL
+  `category_title` text COLLATE utf8_unicode_ci NOT NULL,
+  `category_image` varchar(150) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `categories`
+-- Volcado de datos para la tabla `categories`
 --
 
 INSERT INTO `categories` (`category_id`, `category_title`, `category_image`) VALUES
@@ -78,30 +78,30 @@ INSERT INTO `categories` (`category_id`, `category_title`, `category_image`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `diets`
+-- Estructura de tabla para la tabla `diets`
 --
 
 CREATE TABLE `diets` (
   `diet_id` int(11) NOT NULL,
-  `diet_title` varchar(150) NOT NULL,
-  `diet_description` text NOT NULL,
-  `diet_ingredients` text NOT NULL,
+  `diet_title` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `diet_description` text COLLATE utf8_unicode_ci NOT NULL,
+  `diet_ingredients` text COLLATE utf8_unicode_ci NOT NULL,
   `diet_category` int(11) NOT NULL,
-  `diet_directions` text NOT NULL,
-  `diet_calories` varchar(50) NOT NULL,
-  `diet_carbs` varchar(50) NOT NULL,
-  `diet_protein` varchar(50) NOT NULL,
-  `diet_fat` varchar(50) NOT NULL,
-  `diet_time` varchar(50) NOT NULL,
-  `diet_servings` varchar(50) NOT NULL,
-  `diet_featured` varchar(50) NOT NULL,
-  `diet_status` varchar(50) NOT NULL,
-  `diet_price` varchar(50) NOT NULL DEFAULT '-',
-  `diet_image` varchar(50) NOT NULL
+  `diet_directions` text COLLATE utf8_unicode_ci NOT NULL,
+  `diet_calories` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `diet_carbs` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `diet_protein` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `diet_fat` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `diet_time` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `diet_servings` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `diet_featured` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `diet_status` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `diet_price` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '-',
+  `diet_image` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `diets`
+-- Volcado de datos para la tabla `diets`
 --
 
 INSERT INTO `diets` (`diet_id`, `diet_title`, `diet_description`, `diet_ingredients`, `diet_category`, `diet_directions`, `diet_calories`, `diet_carbs`, `diet_protein`, `diet_fat`, `diet_time`, `diet_servings`, `diet_featured`, `diet_status`, `diet_price`, `diet_image`) VALUES
@@ -124,35 +124,36 @@ INSERT INTO `diets` (`diet_id`, `diet_title`, `diet_description`, `diet_ingredie
 -- --------------------------------------------------------
 
 --
--- Table structure for table `diets_users`
+-- Estructura de tabla para la tabla `diets_users`
 --
 
 CREATE TABLE `diets_users` (
   `du_diet` int(11) DEFAULT NULL,
-  `du_user` varchar(255) DEFAULT NULL
+  `du_user` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `diets_users`
+-- Volcado de datos para la tabla `diets_users`
 --
 
 INSERT INTO `diets_users` (`du_diet`, `du_user`) VALUES
 (15, 'PkzC4Y0PoyTn3CGHFgI9wpkR0WO2');
 
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `equipments`
+-- Estructura de tabla para la tabla `equipments`
 --
 
 CREATE TABLE `equipments` (
   `equipment_id` int(11) NOT NULL,
-  `equipment_title` varchar(150) NOT NULL,
-  `equipment_image` varchar(150) NOT NULL
+  `equipment_title` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `equipment_image` varchar(150) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `equipments`
+-- Volcado de datos para la tabla `equipments`
 --
 
 INSERT INTO `equipments` (`equipment_id`, `equipment_title`, `equipment_image`) VALUES
@@ -168,25 +169,25 @@ INSERT INTO `equipments` (`equipment_id`, `equipment_title`, `equipment_image`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `exercises`
+-- Estructura de tabla para la tabla `exercises`
 --
 
 CREATE TABLE `exercises` (
   `exercise_id` int(11) NOT NULL,
-  `exercise_title` varchar(150) NOT NULL,
-  `exercise_reps` varchar(50) NOT NULL,
-  `exercise_sets` varchar(50) NOT NULL,
-  `exercise_rest` varchar(50) NOT NULL,
+  `exercise_title` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `exercise_reps` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `exercise_sets` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `exercise_rest` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `exercise_equipment` int(11) NOT NULL,
   `exercise_level` int(11) NOT NULL,
-  `exercise_image` varchar(150) NOT NULL,
-  `exercise_video` varchar(250) NOT NULL,
-  `exercise_tips` text NOT NULL,
-  `exercise_instructions` text NOT NULL
+  `exercise_image` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `exercise_video` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `exercise_tips` text COLLATE utf8_unicode_ci NOT NULL,
+  `exercise_instructions` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `exercises`
+-- Volcado de datos para la tabla `exercises`
 --
 
 INSERT INTO `exercises` (`exercise_id`, `exercise_title`, `exercise_reps`, `exercise_sets`, `exercise_rest`, `exercise_equipment`, `exercise_level`, `exercise_image`, `exercise_video`, `exercise_tips`, `exercise_instructions`) VALUES
@@ -212,7 +213,7 @@ INSERT INTO `exercises` (`exercise_id`, `exercise_title`, `exercise_reps`, `exer
 -- --------------------------------------------------------
 
 --
--- Table structure for table `exercises_bodyparts`
+-- Estructura de tabla para la tabla `exercises_bodyparts`
 --
 
 CREATE TABLE `exercises_bodyparts` (
@@ -221,7 +222,7 @@ CREATE TABLE `exercises_bodyparts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `exercises_bodyparts`
+-- Volcado de datos para la tabla `exercises_bodyparts`
 --
 
 INSERT INTO `exercises_bodyparts` (`bodypart_id`, `exercise_id`) VALUES
@@ -275,17 +276,17 @@ INSERT INTO `exercises_bodyparts` (`bodypart_id`, `exercise_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `goals`
+-- Estructura de tabla para la tabla `goals`
 --
 
 CREATE TABLE `goals` (
   `goal_id` int(11) NOT NULL,
-  `goal_title` varchar(150) NOT NULL,
-  `goal_image` varchar(150) NOT NULL
+  `goal_title` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `goal_image` varchar(150) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `goals`
+-- Volcado de datos para la tabla `goals`
 --
 
 INSERT INTO `goals` (`goal_id`, `goal_title`, `goal_image`) VALUES
@@ -297,18 +298,18 @@ INSERT INTO `goals` (`goal_id`, `goal_title`, `goal_image`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `levels`
+-- Estructura de tabla para la tabla `levels`
 --
 
 CREATE TABLE `levels` (
   `level_id` int(11) NOT NULL,
-  `level_title` varchar(50) NOT NULL,
-  `level_rate` varchar(50) NOT NULL,
-  `level_image` varchar(150) NOT NULL
+  `level_title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `level_rate` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `level_image` varchar(150) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `levels`
+-- Volcado de datos para la tabla `levels`
 --
 
 INSERT INTO `levels` (`level_id`, `level_title`, `level_rate`, `level_image`) VALUES
@@ -320,68 +321,49 @@ INSERT INTO `levels` (`level_id`, `level_title`, `level_rate`, `level_image`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `managers`
+-- Estructura de tabla para la tabla `managers`
 --
 
 CREATE TABLE `managers` (
   `manager_id` int(11) NOT NULL,
-  `manager_name` varchar(50) NOT NULL,
-  `manager_email` varchar(150) NOT NULL,
-  `manager_password` varchar(255) NOT NULL,
-  `manager_description` varchar(255) DEFAULT NULL,
-  `manager_avatar` varchar(255) DEFAULT 'avatar.png',
+  `manager_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `manager_email` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `manager_password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `manager_description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `manager_avatar` varchar(255) COLLATE utf8_unicode_ci DEFAULT 'avatar.png',
   `manager_status` tinyint(1) NOT NULL DEFAULT 1,
   `manager_verified` tinyint(1) NOT NULL DEFAULT 0,
   `manager_updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `manager_created` datetime NOT NULL DEFAULT current_timestamp(),
-  `register_code` varchar(500) DEFAULT NULL
+  `manager_created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
--- Dumping data for table `managers`
+-- Volcado de datos para la tabla `managers`
 --
 
-INSERT INTO `managers` (`manager_id`, `manager_name`, `manager_email`, `manager_password`, `manager_description`, `manager_avatar`, `manager_status`, `manager_verified`, `manager_updated`, `manager_created`, `register_code`) VALUES
-(1, 'Wicombit', 'admin@admin.com', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book', 'avatar.png', 1, 0, '2021-12-18 01:40:54', '2021-04-06 04:16:58', NULL),
-(2, 'User', 'user@user.com', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', NULL, 'avatar.png', 1, 0, '2021-12-16 09:41:04', '2021-12-16 09:41:04', NULL);
+INSERT INTO `managers` (`manager_id`, `manager_name`, `manager_email`, `manager_password`, `manager_description`, `manager_avatar`, `manager_status`, `manager_verified`, `manager_updated`, `manager_created`) VALUES
+(1, 'Wicombit', 'admin@admin.com', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book', 'avatar.png', 1, 0, '2021-12-18 01:40:54', '2021-04-06 04:16:58'),
+(2, 'User', 'user@user.com', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', NULL, 'avatar.png', 1, 0, '2021-12-16 09:41:04', '2021-12-16 09:41:04');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `managers_users`
---
-
-CREATE TABLE `managers_users` (
-  `du_manager` int(11) DEFAULT NULL,
-  `du_user` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `managers_users`
---
-
-INSERT INTO `managers_users` (`du_manager`, `du_user`) VALUES
-(2, 'PkzC4Y0PoyTn3CGHFgI9wpkR0WO2');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `posts`
+-- Estructura de tabla para la tabla `posts`
 --
 
 CREATE TABLE `posts` (
   `post_id` int(11) NOT NULL,
-  `post_title` varchar(150) NOT NULL,
-  `post_description` text NOT NULL,
+  `post_title` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `post_description` text COLLATE utf8_unicode_ci NOT NULL,
   `post_tag` int(11) NOT NULL,
-  `post_featured` varchar(11) NOT NULL,
+  `post_featured` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
   `post_date` datetime NOT NULL DEFAULT current_timestamp(),
-  `post_image` varchar(50) NOT NULL,
-  `post_status` varchar(11) NOT NULL
+  `post_image` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `post_status` varchar(11) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `posts`
+-- Volcado de datos para la tabla `posts`
 --
 
 INSERT INTO `posts` (`post_id`, `post_title`, `post_description`, `post_tag`, `post_featured`, `post_date`, `post_image`, `post_status`) VALUES
@@ -398,47 +380,46 @@ INSERT INTO `posts` (`post_id`, `post_title`, `post_description`, `post_tag`, `p
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Estructura de tabla para la tabla `products`
 --
 
 CREATE TABLE `products` (
   `product_id` int(11) NOT NULL,
-  `product_title` varchar(150) NOT NULL,
-  `product_description` text NOT NULL,
+  `product_title` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `product_description` text COLLATE utf8_unicode_ci NOT NULL,
   `product_type` int(11) NOT NULL,
-  `product_featured` varchar(11) NOT NULL,
-  `product_image` varchar(3000) NOT NULL,
-  `product_price` varchar(50) NOT NULL,
-  `product_status` varchar(11) NOT NULL,
-  `product_link` varchar(250) NOT NULL
+  `product_featured` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `product_image` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `product_price` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `product_status` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `product_link` varchar(250) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `products`
+-- Volcado de datos para la tabla `products`
 --
 
 INSERT INTO `products` (`product_id`, `product_title`, `product_description`, `product_type`, `product_featured`, `product_image`, `product_price`, `product_status`, `product_link`) VALUES
 (1, 'The X Shaker - Protein Shaker', '<p>The X Shaker - Red is designed to revolutionize the way you mix. The Bulletbottom design helps you get a super easy, more blended mixture. Give it a shake!</p>', 8, '0', 'product_1631791758.jpg', '€6.99', '1', 'https://www.prozis.com/es/en/prozis/x-shaker-red'),
 (2, 'Xcore BCAA Professional 180 Tabs', '<p>Xcore has developed the most powerful BCAA product in the market. With a combination of leucine, isoleucine and valine in a special 8:1:1 ratio, this is the perfect supplement for those who undergo intensive and exhausting training sessions.</p>', 6, '0', 'product_1631792207.jpg', '€19.99', '1', 'https://www.prozis.com/es/en/prozis/bcaa-811-180-tabs'),
 (3, 'Savory Instant Protein Pancake 1250 g', '<p>Fluffy on the inside and crispy on the outside, what more could you ask for in a delicious breakfast? Prozis Savory Protein Pancakes will make this the yummiest and most balanced meal of all! You\'ll not only have great flavors, but also the right amount of protein for a delicious, conscious, and thorough start to your day.</p>', 6, '0', 'product_1631811803.jpg', '€19.99', '1', 'https://www.prozis.com/es/en/prozis/savory-instant-protein-pancake-1250-g'),
-(4, 'Pistachio Butter 250 g', '<p>Prozis Pistachio Butter is a naturally delicious spread. Besides being nutritious, it is also a more conscious alternative to other animal-based butters. With no salts and palm oil, this smooth and creamy butter is 100% made from whole pistachios. Free from GMOs, Prozis Pistachio Butter is an excellent choice for those who demand only the best nutrition.</p>', 6, '0', 'product_01701350777.jpeg,product_11701350777.jpeg,product_21701350777.jpeg,product_31701350777.jpeg,product_41701350777.jpeg', '€12.99', '1', 'https://www.prozis.com/es/en/prozis/pistachio-butter-250-g'),
-(5, 'aSas', '<p>ASADASASDad</p>', 9, '1', 'product_01701350562.jpeg,product_21701350562.jpeg,product_31701350562.jpeg,product_41701350562.jpeg,product_01701350810.jpeg', '3132156', '1', 'adasdas');
+(4, 'Pistachio Butter 250 g', '<p>Prozis Pistachio Butter is a naturally delicious spread. Besides being nutritious, it is also a more conscious alternative to other animal-based butters. With no salts and palm oil, this smooth and creamy butter is 100% made from whole pistachios. Free from GMOs, Prozis Pistachio Butter is an excellent choice for those who demand only the best nutrition.</p>', 6, '0', 'product_1631811911.jpg', '€12.99', '1', 'https://www.prozis.com/es/en/prozis/pistachio-butter-250-g');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `strings`
+-- Estructura de tabla para la tabla `strings`
 --
 
 CREATE TABLE `strings` (
   `st_id` int(11) NOT NULL,
-  `st_aboutus` text NOT NULL,
-  `st_privacypolicy` text NOT NULL,
-  `st_termsofservice` text NOT NULL
+  `st_aboutus` text COLLATE utf8_unicode_ci NOT NULL,
+  `st_privacypolicy` text COLLATE utf8_unicode_ci NOT NULL,
+  `st_termsofservice` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `strings`
+-- Volcado de datos para la tabla `strings`
 --
 
 INSERT INTO `strings` (`st_id`, `st_aboutus`, `st_privacypolicy`, `st_termsofservice`) VALUES
@@ -447,16 +428,16 @@ INSERT INTO `strings` (`st_id`, `st_aboutus`, `st_privacypolicy`, `st_termsofser
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tags`
+-- Estructura de tabla para la tabla `tags`
 --
 
 CREATE TABLE `tags` (
   `tag_id` int(11) NOT NULL,
-  `tag_title` varchar(50) NOT NULL
+  `tag_title` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `tags`
+-- Volcado de datos para la tabla `tags`
 --
 
 INSERT INTO `tags` (`tag_id`, `tag_title`) VALUES
@@ -469,16 +450,16 @@ INSERT INTO `tags` (`tag_id`, `tag_title`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `types`
+-- Estructura de tabla para la tabla `types`
 --
 
 CREATE TABLE `types` (
   `type_id` int(11) NOT NULL,
-  `type_title` varchar(50) NOT NULL
+  `type_title` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `types`
+-- Volcado de datos para la tabla `types`
 --
 
 INSERT INTO `types` (`type_id`, `type_title`) VALUES
@@ -490,18 +471,18 @@ INSERT INTO `types` (`type_id`, `type_title`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `we_day1`
+-- Estructura de tabla para la tabla `we_day1`
 --
 
 CREATE TABLE `we_day1` (
   `exercise_id` int(11) NOT NULL,
   `workout_id` int(11) NOT NULL,
   `day_1` int(11) NOT NULL,
-  `eorder` varchar(50) NOT NULL
+  `eorder` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `we_day1`
+-- Volcado de datos para la tabla `we_day1`
 --
 
 INSERT INTO `we_day1` (`exercise_id`, `workout_id`, `day_1`, `eorder`) VALUES
@@ -571,18 +552,18 @@ INSERT INTO `we_day1` (`exercise_id`, `workout_id`, `day_1`, `eorder`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `we_day2`
+-- Estructura de tabla para la tabla `we_day2`
 --
 
 CREATE TABLE `we_day2` (
   `exercise_id` int(11) NOT NULL,
   `workout_id` int(11) NOT NULL,
   `day_2` int(11) NOT NULL,
-  `eorder` varchar(50) DEFAULT NULL
+  `eorder` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `we_day2`
+-- Volcado de datos para la tabla `we_day2`
 --
 
 INSERT INTO `we_day2` (`exercise_id`, `workout_id`, `day_2`, `eorder`) VALUES
@@ -594,18 +575,18 @@ INSERT INTO `we_day2` (`exercise_id`, `workout_id`, `day_2`, `eorder`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `we_day3`
+-- Estructura de tabla para la tabla `we_day3`
 --
 
 CREATE TABLE `we_day3` (
   `exercise_id` int(11) NOT NULL,
   `workout_id` int(11) NOT NULL,
   `day_3` int(11) NOT NULL,
-  `eorder` varchar(50) DEFAULT NULL
+  `eorder` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `we_day3`
+-- Volcado de datos para la tabla `we_day3`
 --
 
 INSERT INTO `we_day3` (`exercise_id`, `workout_id`, `day_3`, `eorder`) VALUES
@@ -669,18 +650,18 @@ INSERT INTO `we_day3` (`exercise_id`, `workout_id`, `day_3`, `eorder`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `we_day4`
+-- Estructura de tabla para la tabla `we_day4`
 --
 
 CREATE TABLE `we_day4` (
   `exercise_id` int(11) NOT NULL,
   `workout_id` int(11) NOT NULL,
   `day_4` int(11) NOT NULL,
-  `eorder` varchar(50) DEFAULT NULL
+  `eorder` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `we_day4`
+-- Volcado de datos para la tabla `we_day4`
 --
 
 INSERT INTO `we_day4` (`exercise_id`, `workout_id`, `day_4`, `eorder`) VALUES
@@ -692,18 +673,18 @@ INSERT INTO `we_day4` (`exercise_id`, `workout_id`, `day_4`, `eorder`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `we_day5`
+-- Estructura de tabla para la tabla `we_day5`
 --
 
 CREATE TABLE `we_day5` (
   `exercise_id` int(11) NOT NULL,
   `workout_id` int(11) NOT NULL,
   `day_5` int(11) NOT NULL,
-  `eorder` varchar(50) DEFAULT NULL
+  `eorder` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `we_day5`
+-- Volcado de datos para la tabla `we_day5`
 --
 
 INSERT INTO `we_day5` (`exercise_id`, `workout_id`, `day_5`, `eorder`) VALUES
@@ -769,31 +750,31 @@ INSERT INTO `we_day5` (`exercise_id`, `workout_id`, `day_5`, `eorder`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `we_day6`
+-- Estructura de tabla para la tabla `we_day6`
 --
 
 CREATE TABLE `we_day6` (
   `exercise_id` int(11) NOT NULL,
   `workout_id` int(11) NOT NULL,
   `day_6` int(11) NOT NULL,
-  `eorder` varchar(50) DEFAULT NULL
+  `eorder` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `we_day7`
+-- Estructura de tabla para la tabla `we_day7`
 --
 
 CREATE TABLE `we_day7` (
   `exercise_id` int(11) NOT NULL,
   `workout_id` int(11) NOT NULL,
   `day_7` int(11) NOT NULL,
-  `eorder` varchar(50) DEFAULT NULL
+  `eorder` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `we_day7`
+-- Volcado de datos para la tabla `we_day7`
 --
 
 INSERT INTO `we_day7` (`exercise_id`, `workout_id`, `day_7`, `eorder`) VALUES
@@ -836,25 +817,25 @@ INSERT INTO `we_day7` (`exercise_id`, `workout_id`, `day_7`, `eorder`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `workouts`
+-- Estructura de tabla para la tabla `workouts`
 --
 
 CREATE TABLE `workouts` (
   `workout_id` int(11) NOT NULL,
-  `workout_title` varchar(150) NOT NULL,
-  `workout_description` text NOT NULL,
+  `workout_title` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `workout_description` text COLLATE utf8_unicode_ci NOT NULL,
   `workout_goal` int(11) NOT NULL,
   `workout_level` int(11) NOT NULL,
   `workout_bodypart` int(11) NOT NULL,
   `workout_equipment` int(11) NOT NULL,
-  `workout_duration` varchar(150) NOT NULL,
-  `workout_status` varchar(11) NOT NULL,
-  `workout_price` varchar(11) NOT NULL DEFAULT 'free',
-  `workout_image` varchar(150) NOT NULL
+  `workout_duration` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `workout_status` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `workout_price` varchar(11) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'free',
+  `workout_image` varchar(150) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `workouts`
+-- Volcado de datos para la tabla `workouts`
 --
 
 INSERT INTO `workouts` (`workout_id`, `workout_title`, `workout_description`, `workout_goal`, `workout_level`, `workout_bodypart`, `workout_equipment`, `workout_duration`, `workout_status`, `workout_price`, `workout_image`) VALUES
@@ -878,16 +859,16 @@ INSERT INTO `workouts` (`workout_id`, `workout_title`, `workout_description`, `w
 -- --------------------------------------------------------
 
 --
--- Table structure for table `workouts_users`
+-- Estructura de tabla para la tabla `workouts_users`
 --
 
 CREATE TABLE `workouts_users` (
   `ws_workout` int(11) DEFAULT NULL,
-  `ws_user` varchar(255) DEFAULT NULL
+  `ws_user` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
--- Dumping data for table `workouts_users`
+-- Volcado de datos para la tabla `workouts_users`
 --
 
 INSERT INTO `workouts_users` (`ws_workout`, `ws_user`) VALUES
@@ -895,36 +876,36 @@ INSERT INTO `workouts_users` (`ws_workout`, `ws_user`) VALUES
 (16, 'PkzC4Y0PoyTn3CGHFgI9wpkR0WO2');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `bodyparts`
+-- Indices de la tabla `bodyparts`
 --
 ALTER TABLE `bodyparts`
   ADD PRIMARY KEY (`bodypart_id`);
 
 --
--- Indexes for table `categories`
+-- Indices de la tabla `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Indexes for table `diets`
+-- Indices de la tabla `diets`
 --
 ALTER TABLE `diets`
   ADD PRIMARY KEY (`diet_id`),
   ADD KEY `FK_categories` (`diet_category`);
 
 --
--- Indexes for table `equipments`
+-- Indices de la tabla `equipments`
 --
 ALTER TABLE `equipments`
   ADD PRIMARY KEY (`equipment_id`);
 
 --
--- Indexes for table `exercises`
+-- Indices de la tabla `exercises`
 --
 ALTER TABLE `exercises`
   ADD PRIMARY KEY (`exercise_id`),
@@ -932,64 +913,64 @@ ALTER TABLE `exercises`
   ADD KEY `FK_exercises_levels` (`exercise_level`);
 
 --
--- Indexes for table `exercises_bodyparts`
+-- Indices de la tabla `exercises_bodyparts`
 --
 ALTER TABLE `exercises_bodyparts`
   ADD KEY `FK_exercises_bodyparts_bodyparts` (`bodypart_id`),
   ADD KEY `FK_exercises_bodyparts_exercises` (`exercise_id`);
 
 --
--- Indexes for table `goals`
+-- Indices de la tabla `goals`
 --
 ALTER TABLE `goals`
   ADD PRIMARY KEY (`goal_id`);
 
 --
--- Indexes for table `levels`
+-- Indices de la tabla `levels`
 --
 ALTER TABLE `levels`
   ADD PRIMARY KEY (`level_id`);
 
 --
--- Indexes for table `managers`
+-- Indices de la tabla `managers`
 --
 ALTER TABLE `managers`
   ADD PRIMARY KEY (`manager_id`) USING BTREE,
   ADD UNIQUE KEY `user_email` (`manager_email`) USING BTREE;
 
 --
--- Indexes for table `posts`
+-- Indices de la tabla `posts`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`post_id`),
   ADD KEY `FK_categories` (`post_tag`);
 
 --
--- Indexes for table `products`
+-- Indices de la tabla `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`) USING BTREE;
 
 --
--- Indexes for table `strings`
+-- Indices de la tabla `strings`
 --
 ALTER TABLE `strings`
   ADD PRIMARY KEY (`st_id`);
 
 --
--- Indexes for table `tags`
+-- Indices de la tabla `tags`
 --
 ALTER TABLE `tags`
   ADD PRIMARY KEY (`tag_id`);
 
 --
--- Indexes for table `types`
+-- Indices de la tabla `types`
 --
 ALTER TABLE `types`
   ADD PRIMARY KEY (`type_id`) USING BTREE;
 
 --
--- Indexes for table `workouts`
+-- Indices de la tabla `workouts`
 --
 ALTER TABLE `workouts`
   ADD PRIMARY KEY (`workout_id`),
@@ -997,119 +978,119 @@ ALTER TABLE `workouts`
   ADD KEY `FK_workouts_levels` (`workout_level`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `bodyparts`
+-- AUTO_INCREMENT de la tabla `bodyparts`
 --
 ALTER TABLE `bodyparts`
   MODIFY `bodypart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `diets`
+-- AUTO_INCREMENT de la tabla `diets`
 --
 ALTER TABLE `diets`
   MODIFY `diet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `equipments`
+-- AUTO_INCREMENT de la tabla `equipments`
 --
 ALTER TABLE `equipments`
   MODIFY `equipment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `exercises`
+-- AUTO_INCREMENT de la tabla `exercises`
 --
 ALTER TABLE `exercises`
   MODIFY `exercise_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `goals`
+-- AUTO_INCREMENT de la tabla `goals`
 --
 ALTER TABLE `goals`
   MODIFY `goal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `levels`
+-- AUTO_INCREMENT de la tabla `levels`
 --
 ALTER TABLE `levels`
   MODIFY `level_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `managers`
+-- AUTO_INCREMENT de la tabla `managers`
 --
 ALTER TABLE `managers`
   MODIFY `manager_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `posts`
+-- AUTO_INCREMENT de la tabla `posts`
 --
 ALTER TABLE `posts`
   MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tags`
+-- AUTO_INCREMENT de la tabla `tags`
 --
 ALTER TABLE `tags`
   MODIFY `tag_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `types`
+-- AUTO_INCREMENT de la tabla `types`
 --
 ALTER TABLE `types`
   MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `workouts`
+-- AUTO_INCREMENT de la tabla `workouts`
 --
 ALTER TABLE `workouts`
   MODIFY `workout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `diets`
+-- Filtros para la tabla `diets`
 --
 ALTER TABLE `diets`
   ADD CONSTRAINT `FK_categories` FOREIGN KEY (`diet_category`) REFERENCES `categories` (`category_id`);
 
 --
--- Constraints for table `exercises`
+-- Filtros para la tabla `exercises`
 --
 ALTER TABLE `exercises`
   ADD CONSTRAINT `FK_exercises_equipments` FOREIGN KEY (`exercise_equipment`) REFERENCES `equipments` (`equipment_id`),
   ADD CONSTRAINT `FK_exercises_levels` FOREIGN KEY (`exercise_level`) REFERENCES `levels` (`level_id`);
 
 --
--- Constraints for table `exercises_bodyparts`
+-- Filtros para la tabla `exercises_bodyparts`
 --
 ALTER TABLE `exercises_bodyparts`
   ADD CONSTRAINT `FK_exercises_bodyparts_bodyparts` FOREIGN KEY (`bodypart_id`) REFERENCES `bodyparts` (`bodypart_id`),
   ADD CONSTRAINT `FK_exercises_bodyparts_exercises` FOREIGN KEY (`exercise_id`) REFERENCES `exercises` (`exercise_id`);
 
 --
--- Constraints for table `posts`
+-- Filtros para la tabla `posts`
 --
 ALTER TABLE `posts`
   ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`post_tag`) REFERENCES `tags` (`tag_id`);
 
 --
--- Constraints for table `workouts`
+-- Filtros para la tabla `workouts`
 --
 ALTER TABLE `workouts`
   ADD CONSTRAINT `FK_workouts_goals` FOREIGN KEY (`workout_goal`) REFERENCES `goals` (`goal_id`),
@@ -1119,3 +1100,32 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+/*Extra queries  */
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `managers_users`
+--
+
+CREATE TABLE `managers_users` (
+  `du_manager` int(11) DEFAULT NULL,
+  `du_user` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `diets_users`
+--
+
+INSERT INTO `managers_users` (`du_manager`, `du_user`) VALUES
+(2, 'PkzC4Y0PoyTn3CGHFgI9wpkR0WO2');
+
+/* This adds the code for new users to register */
+ALTER TABLE `managers`
+ADD `register_code` varchar(500);
+
+/*
+Excellent, now here is the code for get_users.php, I want you to modify the function so it only brings the users from firebase that are related to the id of the manager. You should query managers_users where du_manager is the code of the manager and du_user is the code of the users associated in firebase*/
