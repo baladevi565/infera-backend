@@ -38,8 +38,14 @@
    <label class="control-label">Link</label>
    <input type="text" value="<?php echo $product['product_link']; ?>" placeholder="Link" name="product_link" class="form-control" required="">
 
-   <label class="control-label">Price</label>
-   <input type="text" value="<?php echo $product['product_price']; ?>" placeholder="Price" name="product_price" class="form-control" required="">
+   <label>Pricing</label>
+	<select class="custom-select form-control" name="product_price">
+		<option value selected>-</option>
+		<option value="One time price" <?php if($product['product_price']=='One time price'){?>selected="selected"<?php } ?> >One time price</option>
+		<option value="Price for 30 days" <?php if($product['product_price']=='Price for 30 days'){?>selected="selected"<?php } ?>>Price for 30 days</option>
+		<option value="Price for 60 days" <?php if($product['product_price']=='Price for 60 days'){?>selected="selected"<?php } ?>>Price for 60 days</option>
+		<option value="Price for 90 days" <?php if($product['product_price']=='Price for 90 days'){?>selected="selected"<?php } ?>>Price for 90 days</option>
+	</select>
 
    <label class="control-label">Type</label>
    <select class="form-control" name="product_type" required>
@@ -48,6 +54,17 @@
    <option value="<?php echo $types_list['type_id']; ?>"><?php echo $types_list['type_title']; ?></option>
     <?php endforeach; ?>
    </select>
+<label>Why you would love it</label>
+<textarea placeholder="" name="review_des" class="form-control"><?php echo $product['review_des']; ?></textarea>
+
+<label>Technology</label>
+<textarea placeholder="" name="technology" class="form-control"><?php echo $product['technology']; ?></textarea>
+					
+<label>How it works</label>
+<textarea placeholder="" name="howworks" class="form-control"><?php echo $product['hiworks']; ?></textarea>
+					
+<label>Volume</label>
+<textarea placeholder="" name="volume" class="form-control"><?php echo $product['volumn']; ?></textarea>
 
    <label class="control-label">Featured</label>
    

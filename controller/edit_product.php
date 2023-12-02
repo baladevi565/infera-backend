@@ -14,7 +14,6 @@ if(!$connect){
 	}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-
 	$product_title = cleardata($_POST['product_title']);
 	$product_description = $_POST['product_description'];
 	$product_type = cleardata($_POST['product_type']);
@@ -26,7 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$product_image_save = $_POST['product_image_save'];
 	$product_image = $_FILES['product_image'];
 	$old_images = explode(',', $product_image_save);
-	
+	$review_des = cleardata($_POST['review_des']);
+	$technology = cleardata($_POST['technology']);
+	$volume = cleardata($_POST['volume']);
+	$hiworks = cleardata($_POST['howworks']);
 	
 	
 	if (empty($product_image['name'])) {
@@ -86,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	}
 	//print_r($product_image);
 //exit();
-$statment = $connect->prepare("UPDATE products SET product_title = :product_title, product_description = :product_description, product_type = :product_type, product_featured = :product_featured, product_status = :product_status, product_price = :product_price, product_link = :product_link, product_image = :product_image WHERE product_id = :product_id");
+$statment = $connect->prepare("UPDATE products SET product_title = :product_title, product_description = :product_description, product_type = :product_type, product_featured = :product_featured, product_status = :product_status, product_price = :product_price, product_link = :product_link,review_des= :review_des, technology= :technology, volumn= :volumn, hiworks= :hiworks, product_image= :product_image WHERE product_id = :product_id");
 
 $statment->execute(array(
 
@@ -98,8 +100,11 @@ $statment->execute(array(
 		':product_price' => $product_price,
 		':product_link' => $product_link,
 		':product_image' => $product_image,
-		':product_id' => $product_id
-
+		':product_id' => $product_id,
+		':review_des' => $review_des,
+		':hiworks' => $hiworks,
+		':technology' => $technology,
+		':volumn' => $volume	
 		));
 
 header('Location: ' . $_SERVER['HTTP_REFERER']);

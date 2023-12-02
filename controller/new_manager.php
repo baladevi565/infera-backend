@@ -17,6 +17,11 @@ if (isset($_SESSION['manager_email'])){
 			$manager_name = cleardata($_POST['manager_name']);
 			$manager_email = cleardata($_POST['manager_email']);
 			$manager_verified = cleardata($_POST['manager_verified']);
+			$review = cleardata($_POST['review']);
+			$technology = cleardata($_POST['technology']);
+			$howworks = cleardata($_POST['manager_verified']);
+			$volumn = cleardata($_POST['volumn']);
+			$price = cleardata($_POST['price']);
 			$manager_password = cleardata($_POST['manager_password']);
 			$encryptPass = hash('sha512', $manager_password);
 

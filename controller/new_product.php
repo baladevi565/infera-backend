@@ -24,11 +24,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$product_status = cleardata($_POST['product_status']);
 	$product_price = cleardata($_POST['product_price']);
 	$product_link = cleardata($_POST['product_link']);
+	$review_des = cleardata($_POST['review_des']);
+	$technology = cleardata($_POST['technology']);
+	$volumn = cleardata($_POST['volume']);
+	$hiworks = cleardata($_POST['howworks']);
 	$product_image = $_FILES['product_image'];
 	
 	
 	$len = sizeof($product_image["name"]);
-	echo $len;
+
 	for($i=0;$i<=$len;$i++){
 		$imagefile = explode(".", $product_image["name"][$i]);
 		$renamefile = round(microtime(true)) . '.' . end($imagefile);
@@ -37,8 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$product_imag[$i] = 'product_'.$i. $renamefile;
 	}
 	$product_image = implode(',',$product_imag);
-	//print_r($product_image);
-	//exit();
+	
 	//$imagefile = explode(".", $_FILES["product_image"]["name"]);
 	//$renamefile = round(microtime(true)) . '.' . end($imagefile);
 
@@ -46,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	
 	//move_uploaded_file($product_image, $product_image_upload . 'product_' . $renamefile);
 
-	$statment = $connect->prepare("INSERT INTO products (product_id,product_title,product_description,product_type,product_featured,product_status,product_price,product_link,product_image) VALUES (null, :product_title, :product_description, :product_type, :product_featured, :product_status, :product_price, :product_link, :product_image)");
+	$statment = $connect->prepare("INSERT INTO products (product_id,product_title,product_description,product_type,product_featured,product_status,product_price,product_link,product_image,review_des,technology,volumn,hiworks) VALUES (null, :product_title, :product_description, :product_type, :product_featured, :product_status, :product_price, :product_link, :product_image, :review_des, :technology, :volumn, :hiworks)");
 
 	$statment->execute(array(
 		':product_title' => $product_title,
@@ -56,7 +59,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		':product_status' => $product_status,
 		':product_price' => $product_price,
 		':product_link' => $product_link,
-		':product_image' => 'product_' . $renamefile
+		':review_des' => $review_des,
+		':hiworks' => $hiworks,
+		':technology' => $technology,
+		':volumn' => $volumn,
+		':product_image' => $product_image
 		));
 
 	header('Location:' . SITE_URL . '/controller/products.php');

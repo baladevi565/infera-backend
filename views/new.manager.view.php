@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-12">
             <div class="section-title">
-              <h5>Add Manager</h5>
+              <h5>Add Salesman</h5>
             </div>
           </div>
 
@@ -43,6 +43,8 @@
                       <option value="1">Yes</option>
                       <option value="0">No</option>
                     </select>
+					
+					
 
                   </div>
 

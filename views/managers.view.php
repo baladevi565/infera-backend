@@ -33,12 +33,12 @@
       }
     },
   { "mData": null ,
-  "width": "14%",
+  "width": "17%",
   "className": "text-center",
   'orderable': false,
   'searchable': false,
   "mRender" : function (data) {
-    return "<a class='btn btn-small btn-primary' href='../controller/edit_manager.php?id="+data.manager_id+"'>Edit</a> <a class='btn btn-small btn-danger btn-delete deleteItem' data-url='../controller/delete_manager.php?id="+data.manager_id+"'>Delete</a>";}
+    return "<a class='btn btn-small btn-primary' href='../controller/edit_manager.php?id="+data.manager_id+"'>Edit</a> <a class='btn btn-small btn-warning btn-warning viewItem' data-url='../controller/#'>View Sales</a> <a class='btn btn-small btn-danger btn-delete deleteItem' data-url='../controller/delete_manager.php?id="+data.manager_id+"'>Delete</a>";}
   }
   ]
 });
@@ -56,7 +56,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title">
-                            <h5>Managers</h5>
+                            <h5>Salesman</h5>
                         </div>
                     </div>
 

@@ -1,3 +1,5 @@
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 <nav id="navigation" class="navigation-sidebar bg-primary">
         <div class="navigation-header">
         <a href="<?php echo SITE_URL ?>"><img src="../assets/images/wbdashboard.png" style="max-width: 130px;"></a>
@@ -86,6 +88,32 @@
 
                 </ul>
             </li>
+			
+			
+			<li>
+                <a href="javascript:void(0);" class="have-submenu <?php showMenu('products.php');?>">
+                    <span class="icon-thumbnail"><i class="dripicons-cart"></i></span>
+                    <span class="title">Packages</span>
+                </a>
+                <!--Submenu-->
+                <ul class="sub-menu" style="display: <?php activePage('packages.php');?>">
+
+                    <li>
+                        <a href="../controller/packages.php">
+                            <span class="icon-thumbnail"><i class="dripicons-dot"></i></span>
+                            <span class="title">Show All</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../controller/new_packages.php">
+                            <span class="icon-thumbnail"><i class="dripicons-dot"></i></span>
+                            <span class="title">New Product</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
 
             <li>
                 <a href="javascript:void(0);" class="have-submenu <?php showMenu('types.php');?>">
@@ -115,7 +143,7 @@
             <li>
                 <a href="javascript:void(0);" class="have-submenu <?php showMenu('managers.php');?>">
                     <span class="icon-thumbnail"><i class="dripicons-user"></i></span>
-                    <span class="title">Managers</span>
+                    <span class="title">Salesman</span>
                 </a>
                 <!--Submenu-->
                 <ul class="sub-menu" style="display: <?php activePage('managers.php');?>">
@@ -130,7 +158,7 @@
                     <li>
                         <a href="../controller/new_manager.php">
                             <span class="icon-thumbnail"><i class="dripicons-dot"></i></span>
-                            <span class="title">New Manager</span>
+                            <span class="title">New Salesman</span>
                         </a>
                     </li>
 
