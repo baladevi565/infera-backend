@@ -106,7 +106,7 @@
                     </li>
 
                     <li>
-                        <a href="../controller/new_packages.php">
+                        <a href="../controller/new_package.php">
                             <span class="icon-thumbnail"><i class="dripicons-dot"></i></span>
                             <span class="title">New Product</span>
                         </a>

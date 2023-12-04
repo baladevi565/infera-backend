@@ -6,7 +6,9 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Dashboard</title>
     <link href="../assets/images/favicon.png" rel="shortcut icon">
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/plugins/customScroll/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="../assets/icons/simple-line/css/simple-line-icons.css">
     <link rel="stylesheet" href="../assets/icons/dripicons/dripicons.css">

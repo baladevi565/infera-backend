@@ -363,12 +363,33 @@ function get_all_products($connect)
     return $sentence->fetchAll();
 }
 
+
+/////////////////////////////////////////////////////////////////////////////////// PRODUCTS
+
+function get_all_packages($connect)
+{
+    
+    $sentence = $connect->prepare("SELECT * FROM packages"); 
+    $sentence->execute();
+    return $sentence->fetchAll();
+}
+
 function id_product($id_product){
     return (int)cleardata($id_product);
 }
 
 function get_product_per_id($connect, $id_product){
     $sentence = $connect->query("SELECT products.*,types.type_title AS type_title FROM products,types WHERE product_id = $id_product AND products.product_type = types.type_id LIMIT 1");
+    $sentence = $sentence->fetchAll();
+    return ($sentence) ? $sentence : false;
+}
+
+function id_package($id_package){
+    return (int)cleardata($id_package);
+}
+
+function get_package_per_id($connect, $id_package){
+    $sentence = $connect->query("SELECT * FROM packages WHERE package_id = $id_package LIMIT 1");
     $sentence = $sentence->fetchAll();
     return ($sentence) ? $sentence : false;
 }
